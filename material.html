@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Abdulhakim Xayitboyev Portfolio</title>
+    <style>
+        /* Material You rang palitrasi */
+        :root {
+            --primary-color: #6200ee;
+            --secondary-color: #03dac6;
+            --surface-color: #ffffff;
+            --background-color: #f5f5f5;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            margin: 0;
+            scroll-behavior: smooth; /* Bo'limlarga silliq o'tish uchun */
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--surface-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--surface-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info, .skills, .experience, .education {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-info li, .skills li, .experience li, .education li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info li .material-icons, .skills li .material-icons, .experience li .material-icons, .education li .material-icons {
+            margin-right: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card-content {
+            padding: 1rem 0;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .card-content p {
+            color: var(--text-secondary);
+        }
+
+        .card-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .card-content a:hover {
+            text-decoration: underline;
+        }
+
+        .bottom-navigation {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--surface-color);
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem 0;
+        }
+
+        .bottom-navigation a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bottom-navigation a .material-icons {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Abdulhakim Xayitboyev Biosteenyc</h1>
+        <p>Flutter Dasturchi</p>
+        <img src="meself.jpg" alt="Abdulhakim Xayitboyev" class="profile-picture">
+    </header>
+
+    <nav>
+        <a href="#about">Men haqimda</a>
+        <a href="#skills">Bilimlar</a>
+        <a href="#experience">Tajriba</a>
+        <a href="#education">Ta'lim</a>
+        <a href="#projects">Loyihalar</a>
+        <a href="#contact">Aloqa</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About</h2>
+            <ul class="contact-info">
+                <li><span class="material-icons">email</span>Email: xayitboyevabdulhakim@gmail.com</li>
+                <li><span class="material-icons">phone</span>Telefon: +998 33 349 09 30</li>
+                <li><span class="material-icons">person</span>Telegram/Instagram/YouTube: Biosteenyc</li>
+                <li><span class="material-icons">location_on</span>Manzil: Farg'ona viloyat, O'zbekiston</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Kasbiy Ko'nikmalar</h2>
+            <ul class="skills">
+                <li><span class="material-icons">code</span>Dart tilida dasturlash</li>
+                <li><span class="material-icons">phone_android</span>Flutter bilan mobil ilovalarni ishlab chiqish</li>
+                <li><span class="material-icons">cloud</span>Firebase va REST API bilan ishlash</li>
+                <li><span class="material-icons">merge_type</span>Git version control tizimidan foydalanish</li>
+            </ul>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Ish Tajribasi</h2>
+            <ul class="experience">
+                <li>
+                    <span class="material-icons">work</span>
+                    <strong>Junior Flutter Developer - frilanceer</strong><br><br>
+                    2022 - Hozirgi vaqtgacha<br>
+                    Flutter bilan turli xil mobil ilovalarni ishlab chiqish va yangilash.
+                </li>
+            </ul>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Ta'lim</h2>
+            <ul class="education">
+                <li>
+                    <span class="material-icons">school</span>
+                    <strong>Toshkent Amaliy Fanlar Universiteti</strong><br><br>
+                    Bakalavr darajasi, Kompyuter Injinerligi<br>
+                    2022 - 2026
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Loyihalar</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="kompyutersirlari.webp" alt="Loyiha nomi">
+                    <div class="card-content">
+                        <h3>Kompyuter sirlari</h3>
+                        <p>Kompyuterdagi tizim muammolarini hal etish</p>
+                        <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari&hl=uz" target="_blank">Play Marketdan yuklash</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="telefonakademiyasi.jpg" alt="Loyiha nomi">
+                    <div class="card-content">
+                        <h3>Telefon Akademiyasi</h3>
+                        <p>Telefondan maksimal foyda olish.</p>
+                        <a href="https://github.com/BIOSTEENYC/telefon_akademiyasi" target="_blank">Loyihani ko'rish</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="abdulhakimsherlari.jpg" alt="Loyiha nomi">
+                    <div class="card-content">
+                        <h3>Abdulhakim she'rlari</h3>
+                        <p>Zamonaviy va Yoqimli she'rlar</p>
+                        <a href="https://github.com/BIOSTEENYC/abdulhakim_sherlari" target="_blank">Loyihani ko'rish</a>
+                    </div>
+                </div>
+ <div class="card">
+                    <img src="namozvaqti.jpg" alt="Loyiha nomi">
+                    <div class="card-content">
+                        <h3>Namoz Vaqti Monitor</h3>
+                        <p>Eng oddiy namoz vaqti ilovasi</p>
+                        <a href="https://github.com/BIOSTEENYC/namoz_vaqtlari" target="_blank">Loyihani ko'rish</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Kontakt</h2>
+            <p>Agar biz bilan bog'lanmoqchi bo'lsangiz, yuqoridagi aloqa ma'lumotlaridan foydalaning.</p>
+        </section>
+    </div>
+
+    <div class="bottom-navigation">
+        <a href="#about"><span class="material-icons">person</span><span>About</span></a>
+        <a href="#skills"><span class="material-icons">build</span><span>Skills</span></a>
+        <a href="#experience"><span class="material-icons">work</span><span>Experience</span></a>
+        <a href="#education"><span class="material-icons">school</span><span>Education</span></a>
+        <a href="#projects"><span class="material-icons">folder</span><span>Projects</span></a>
+        <a href="#contact"><span class="material-icons">mail</span><span>Contact</span></a>
+    </div>
+</body>
+</html>
