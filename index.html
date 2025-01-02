@@ -1,256 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
-<title>My Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-<style>
-  body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #1f1f1f, #282828);
+            color: #fff;
+            perspective: 1500px;
+        }
 
-  .section {
-    padding: 40px;
-    text-align: center;
-  }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-  h2 {
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
+        .section {
+            margin: 20px 0;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease-in-out;
+        }
 
-  .skills, .experience, .education {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+        .section:hover {
+            transform: translateZ(20px) rotateX(5deg);
+        }
 
-  .skills li, .experience li, .education li {
-    margin: 10px;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
-  }
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
 
-  .material-icons {
-    font-size: 36px;
-    margin-right: 10px;
-  }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
+        li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
 
-  .card {
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
+        .material-icons {
+            margin-right: 10px;
+            font-size: 24px;
+        }
 
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-  .card-content {
-    padding: 20px;
-  }
+        .card {
+            background: #21262d;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            perspective: 1000px;
+        }
 
-  .card-content h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
+        .card:hover {
+            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
 
-  .card-content p {
-    margin-bottom: 10px;
-  }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
 
-  .card-content a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #008CBA;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-  }
+        .card-content h3 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
 
-  .bottom-navigation {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  }
+        .card-content p {
+            font-size: 1rem;
+        }
 
-  .bottom-navigation a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+        .card-content a {
+            text-decoration: none;
+            color: #2196f3;
+            font-weight: bold;
+        }
 
-  .bottom-navigation .material-icons {
-    font-size: 24px;
-  }
+        .bottom-navigation {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #1f1f1f;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+        }
 
-  .bottom-navigation span {
-    font-size: 12px;
-  }
+        .bottom-navigation a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-  /* 3D Kub uchun CSS */
-  #cube-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-  }
-</style>
+        .bottom-navigation .material-icons {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .card-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .card-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="container">
-    <section id="about" class="section">
-      <h2>Men haqimda</h2>
-      <p>Men - Flutter dasturchisi, mobil ilovalarni ishlab chiqish va yangilash bilan shug'ullanaman.</p>
-    </section>
+    <div class="container">
+        <section id="skills" class="section">
+            <h2>Kasbiy Ko'nikmalar</h2>
+            <ul>
+                <li><span class="material-icons">code</span>Dart tilida dasturlash</li>
+                <li><span class="material-icons">phone_android</span>Flutter bilan mobil ilovalarni ishlab chiqish</li>
+                <li><span class="material-icons">cloud</span>Firebase va REST API bilan ishlash</li>
+                <li><span class="material-icons">merge_type</span>Git version control tizimidan foydalanish</li>
+            </ul>
+        </section>
 
-    <section id="skills" class="section">
-      <h2>Kasbiy Ko'nikmalar</h2>
-      <ul class="skills">
-        <li><span class="material-icons">code</span>Dart tilida dasturlash</li>
-        <li><span class="material-icons">phone_android</span>Flutter bilan mobil ilovalarni ishlab chiqish</li>
-        <li><span class="material-icons">cloud</span>Firebase va REST API bilan ishlash</li>
-        <li><span class="material-icons">merge_type</span>Git version control tizimidan foydalanish</li>
-      </ul>
-    </section>
+        <section id="experience" class="section">
+            <h2>Ish Tajribasi</h2>
+            <ul>
+                <li>
+                    <span class="material-icons">work</span>
+                    <strong>Junior Flutter Developer - frilanceer</strong><br><br>
+                    2022 - Hozirgi vaqtgacha<br>
+                    Flutter bilan turli xil mobil ilovalarni ishlab chiqish va yangilash.
+                </li>
+            </ul>
+        </section>
 
-    <section id="experience" class="section">
-      <h2>Ish Tajribasi</h2>
-      <ul class="experience">
-        <li>
-          <span class="material-icons">work</span>
-          <strong>Junior Flutter Developer - frilanceer</strong><br><br>
-          2022 - Hozirgi vaqtgacha<br>
-          Flutter bilan turli xil mobil ilovalarni ishlab chiqish va yangilash.
-        </li>
-      </ul>
-    </section>
+        <section id="education" class="section">
+            <h2>Ta'lim</h2>
+            <ul>
+                <li>
+                    <span class="material-icons">school</span>
+                    <strong>Toshkent Amaliy Fanlar Universiteti</strong><br><br>
+                    Bakalavr darajasi, Kompyuter Injinerligi<br>
+                    2022 - 2026
+                </li>
+            </ul>
+        </section>
 
-    <section id="education" class="section">
-      <h2>Ta'lim</h2>
-      <ul class="education">
-        <li>
-          <span class="material-icons">school</span>
-          <strong>Toshkent Amaliy Fanlar Universiteti</strong><br><br>
-          Bakalavr darajasi, Kompyuter Injinerligi<br>
-          2022 - 2026
-        </li>
-      </ul>
-    </section>
+        <section id="projects" class="section">
+            <h2>Loyihalar</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="kompyutersirlari.webp" alt="Kompyuter sirlari">
+                    <div class="card-content">
+                        <h3>Kompyuter sirlari</h3>
+                        <p>Kompyuterdagi tizim muammolarini hal etish</p>
+                        <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari&hl=uz" target="_blank">Play Marketdan yuklash</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="telefonakademiyasi.jpg" alt="Telefon Akademiyasi">
+                    <div class="card-content">
+                        <h3>Telefon Akademiyasi</h3>
+                        <p>Telefondan maksimal foyda olish</p>
+                        <a href="https://github.com/BIOSTEENYC/telefon_akademiyasi" target="_blank">Loyihani ko'rish</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="abdulhakimsherlari.jpg" alt="Abdulhakim she'rlari">
+                    <div class="card-content">
+                        <h3>Abdulhakim she'rlari</h3>
+                        <p>Zamonaviy va Yoqimli she'rlar</p>
+                        <a href="https://github.com/BIOSTEENYC/abdulhakim_sherlari" target="_blank">Loyihani ko'rish</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="namozvaqti.jpg" alt="Namoz Vaqti Monitor">
+                    <div class="card-content">
+                        <h3>Namoz Vaqti Monitor</h3>
+                        <p>Eng oddiy namoz vaqti ilovasi</p>
+                        <a href="https://github.com/BIOSTEENYC/namoz_vaqtlari" target="_blank">Loyihani ko'rish</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects" class="section">
-      <h2>Loyihalar</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="kompyutersirlari.webp" alt="Loyiha nomi">
-          <div class="card-content">
-            <h3>Kompyuter sirlari</h3>
-            <p>Kompyuterdagi tizim muammolarini hal etish</p>
-            <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari&hl=uz" target="_blank">Play Marketdan yuklash</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="telefonakademiyasi.jpg" alt="Loyiha nomi">
-          <div class="card-content">
-            <h3>Telefon Akademiyasi</h3>
-            <p>Telefondan maksimal foyda olish.</p>
-            <a href="#" target="_blank">Loyihani ko'rish</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="abdulhakimsherlari.jpg" alt="Loyiha nomi">
-          <div class="card-content">
-            <h3>Abdulhakim she'rlari</h3>
-            <p>Zamonaviy va Yoqimli she'rlar</p>
-            <a href="#" target="_blank">Loyihani ko'rish</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="namozvaqti.jpg" alt="Loyiha nomi">
-          <div class="card-content">
-            <h3>Namoz Vaqti Monitor</h3>
-            <p>Eng oddiy namoz vaqti ilovasi</p>
-            <a href="#" target="_blank">Loyihani ko'rish</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <section id="contact" class="section">
+            <h2>Kontakt</h2>
+            <p>Agar biz bilan bog'lanmoqchi bo'lsangiz, yuqoridagi aloqa ma'lumotlaridan foydalaning.</p>
+        </section>
+    </div>
 
-    <section id="contact" class="section">
-      <h2>Kontakt</h2>
-      <p>Agar biz bilan bog'lanmoqchi bo'lsangiz, yuqoridagi aloqa ma'lumotlaridan foydalaning.</p>
-    </section>
-  </div>
-
-  <div class="bottom-navigation">
-    <a href="#about"><span class="material-icons">person</span><span>About</span></a>
-    <a href="#skills"><span class="material-icons">build</span><span>Skills</span></a>
-    <a href="#experience"><span class="material-icons">work</span><span>Experience</span></a>
-    <a href="#education"><span class="material-icons">school</span><span>Education</span></a>
-    <a href="#projects"><span class="material-icons">folder</span><span>Projects</span></a>
-    <a href="#contact"><span class="material-icons">mail</span><span>Contact</span></a>
-  </div>
-
-  <div id="cube-container">
-    <canvas id="cube-canvas"></canvas>
-  </div>
-
-  <script src="https://threejs.org/build/three.js"></script>
-  <script>
-    // Sahna yaratish
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-    // Render yaratish
-    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('cube-canvas') });
-    renderer.setSize( 300, 300 );
-
-    // Kub yaratish
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    const cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
-
-    // Kamera joylashtirish
-    camera.position.z = 5;
-
-    // Render tsiklini boshlash
-    function animate() {
-      requestAnimationFrame( animate );
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render( scene, camera );
-    }
-    animate();
-  </script>
+    <div class="bottom-navigation">
+        <a href="#skills"><span class="material-icons">build</span><span>Skills</span></a>
+        <a href="#experience"><span class="material-icons">work</span><span>Experience</span></a>
+        <a href="#education"><span class="material-icons">school</span><span>Education</span></a>
+        <a href="#projects"><span class="material-icons">folder</span><span>Projects</span></a>
+        <a href="#contact"><span class="material-icons">mail</span><span>Contact</span></a>
+    </div>
 </body>
-</html>
+  </html>
