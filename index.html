@@ -3,221 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Abdulhakim Xayitboyev - Portfolio</title>
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #1f1f1f, #282828);
+            overflow-x: hidden;
+            background-color: #0a0a0a;
             color: #fff;
-            perspective: 1500px;
         }
-
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            perspective: 1000px;
+        }
+        .portfolio-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            transform-style: preserve-3d;
+            animation: rotate 30s infinite linear;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
         }
 
+        /* 3D effect for sections */
         .section {
-            margin: 20px 0;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0.8;
+            transition: all 1s ease;
         }
 
         .section:hover {
-            transform: translateZ(20px) rotateX(5deg);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* 3D rotation effects */
+        #skills {
+            transform: rotateY(0deg) translateZ(500px);
+            background: #3498db;
+        }
+        #experience {
+            transform: rotateY(90deg) translateZ(500px);
+            background: #e74c3c;
+        }
+        #education {
+            transform: rotateY(180deg) translateZ(500px);
+            background: #2ecc71;
+        }
+        #projects {
+            transform: rotateY(270deg) translateZ(500px);
+            background: #f39c12;
+        }
+        #contact {
+            transform: rotateY(360deg) translateZ(500px);
+            background: #9b59b6;
         }
 
         h2 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2rem;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .material-icons {
-            margin-right: 10px;
-            font-size: 24px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #21262d;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
-            perspective: 1000px;
-        }
-
-        .card:hover {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .card img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .card-content h3 {
-            margin: 10px 0;
-            font-size: 1.5rem;
-        }
-
-        .card-content p {
-            font-size: 1rem;
-        }
-
-        .card-content a {
-            text-decoration: none;
-            color: #2196f3;
-            font-weight: bold;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .bottom-navigation {
             position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #1f1f1f;
+            bottom: 20px;
+            left: 0;
+            right: 0;
             display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            gap: 20px;
         }
 
         .bottom-navigation a {
+            color: white;
             text-decoration: none;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-size: 1.2rem;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
-        .bottom-navigation .material-icons {
-            font-size: 24px;
+        .bottom-navigation a:hover {
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
+        /* Responsiv */
         @media (max-width: 768px) {
-            h2 {
+            .section {
+                padding: 20px;
                 font-size: 1.5rem;
             }
-
-            .card-content h3 {
-                font-size: 1.2rem;
-            }
-
-            .card-content p {
-                font-size: 0.9rem;
+            .bottom-navigation a {
+                font-size: 1rem;
             }
         }
+
     </style>
 </head>
 <body>
-    <div class="container">
+
+<div class="container">
+    <div class="portfolio-container">
+        <!-- Kasbiy Ko'nikmalar -->
         <section id="skills" class="section">
             <h2>Kasbiy Ko'nikmalar</h2>
             <ul>
-                <li><span class="material-icons">code</span>Dart tilida dasturlash</li>
-                <li><span class="material-icons">phone_android</span>Flutter bilan mobil ilovalarni ishlab chiqish</li>
-                <li><span class="material-icons">cloud</span>Firebase va REST API bilan ishlash</li>
-                <li><span class="material-icons">merge_type</span>Git version control tizimidan foydalanish</li>
+                <li>Dart tilida dasturlash</li>
+                <li>Flutter bilan mobil ilovalarni ishlab chiqish</li>
+                <li>Firebase va REST API bilan ishlash</li>
+                <li>Git version control tizimidan foydalanish</li>
             </ul>
         </section>
 
+        <!-- Ish Tajribasi -->
         <section id="experience" class="section">
             <h2>Ish Tajribasi</h2>
             <ul>
                 <li>
-                    <span class="material-icons">work</span>
-                    <strong>Junior Flutter Developer - frilanceer</strong><br><br>
+                    <strong>Junior Flutter Developer - Frilans</strong><br>
                     2022 - Hozirgi vaqtgacha<br>
                     Flutter bilan turli xil mobil ilovalarni ishlab chiqish va yangilash.
                 </li>
             </ul>
         </section>
 
+        <!-- Ta'lim -->
         <section id="education" class="section">
             <h2>Ta'lim</h2>
             <ul>
                 <li>
-                    <span class="material-icons">school</span>
-                    <strong>Toshkent Amaliy Fanlar Universiteti</strong><br><br>
+                    <strong>Toshkent Amaliy Fanlar Universiteti</strong><br>
                     Bakalavr darajasi, Kompyuter Injinerligi<br>
                     2022 - 2026
                 </li>
             </ul>
         </section>
 
+        <!-- Loyihalar -->
         <section id="projects" class="section">
             <h2>Loyihalar</h2>
             <div class="grid">
                 <div class="card">
-                    <img src="kompyutersirlari.webp" alt="Kompyuter sirlari">
-                    <div class="card-content">
-                        <h3>Kompyuter sirlari</h3>
-                        <p>Kompyuterdagi tizim muammolarini hal etish</p>
-                        <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari&hl=uz" target="_blank">Play Marketdan yuklash</a>
-                    </div>
+                    <h3>Kompyuter sirlari</h3>
+                    <p>Kompyuterdagi tizim muammolarini hal etish</p>
+                    <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari&hl=uz" target="_blank">Play Marketdan yuklash</a>
                 </div>
                 <div class="card">
-                    <img src="telefonakademiyasi.jpg" alt="Telefon Akademiyasi">
-                    <div class="card-content">
-                        <h3>Telefon Akademiyasi</h3>
-                        <p>Telefondan maksimal foyda olish</p>
-                        <a href="https://github.com/BIOSTEENYC/telefon_akademiyasi" target="_blank">Loyihani ko'rish</a>
-                    </div>
+                    <h3>Telefon Akademiyasi</h3>
+                    <p>Telefondan maksimal foyda olish</p>
+                    <a href="https://github.com/BIOSTEENYC/telefon_akademiyasi" target="_blank">Loyihani ko'rish</a>
                 </div>
                 <div class="card">
-                    <img src="abdulhakimsherlari.jpg" alt="Abdulhakim she'rlari">
-                    <div class="card-content">
-                        <h3>Abdulhakim she'rlari</h3>
-                        <p>Zamonaviy va Yoqimli she'rlar</p>
-                        <a href="https://github.com/BIOSTEENYC/abdulhakim_sherlari" target="_blank">Loyihani ko'rish</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="namozvaqti.jpg" alt="Namoz Vaqti Monitor">
-                    <div class="card-content">
-                        <h3>Namoz Vaqti Monitor</h3>
-                        <p>Eng oddiy namoz vaqti ilovasi</p>
-                        <a href="https://github.com/BIOSTEENYC/namoz_vaqtlari" target="_blank">Loyihani ko'rish</a>
-                    </div>
+                    <h3>Abdulhakim She'rlari</h3>
+                    <p>She'rlar va zamonaviy mavzular</p>
+                    <a href="https://github.com/BIOSTEENYC/abdulhakim_sherlari" target="_blank">Loyihani ko'rish</a>
                 </div>
             </div>
         </section>
 
+        <!-- Kontakt -->
         <section id="contact" class="section">
             <h2>Kontakt</h2>
             <p>Agar biz bilan bog'lanmoqchi bo'lsangiz, yuqoridagi aloqa ma'lumotlaridan foydalaning.</p>
         </section>
     </div>
+</div>
 
-    <div class="bottom-navigation">
-        <a href="#skills"><span class="material-icons">build</span><span>Skills</span></a>
-        <a href="#experience"><span class="material-icons">work</span><span>Experience</span></a>
-        <a href="#education"><span class="material-icons">school</span><span>Education</span></a>
-        <a href="#projects"><span class="material-icons">folder</span><span>Projects</span></a>
-        <a href="#contact"><span class="material-icons">mail</span><span>Contact</span></a>
-    </div>
+<!-- Navigatsiya -->
+<div class="bottom-navigation">
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</div>
+
 </body>
-  </html>
+</html>
