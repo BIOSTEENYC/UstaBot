@@ -1,0 +1,24 @@
+{
+    "userId": 1,
+    "id": 1,
+    "title": "Maktabga borish",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "Kollekga borish",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "Parkka borish",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "Bog'ga borish",
+    "completed": true
+  },
