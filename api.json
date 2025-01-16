@@ -1,4 +1,5 @@
-{
+[
+    {
     "userId": 1,
     "id": 1,
     "title": "Maktabga borish",
@@ -21,4 +22,5 @@
     "id": 4,
     "title": "Bog'ga borish",
     "completed": true
-  },
+  }
+]
