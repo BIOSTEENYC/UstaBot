@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Flutter dasturchi portfoliasi - al-Biosteenyc.">
-  <title>al-Biosteenyc - Flutter Dasturchi</title>
+  <title>Xayitboyev Abdulhakim | Biosteenyc - Flutter Dasturchi</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -15,7 +15,7 @@
       color: #333;
     }
     header {
-      background: #007aff;
+      background: linear-gradient(90deg, #007aff, #004a99);
       color: white;
       padding: 20px 10px;
       text-align: center;
@@ -31,8 +31,11 @@
       display: flex;
       justify-content: center;
       gap: 15px;
-      background: #004a99;
+      background: linear-gradient(90deg, #004a99, #007aff, #00c6ff);
       padding: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: perspective(1000px) rotateX(10deg);
     }
     nav a {
       color: white;
@@ -54,6 +57,53 @@
       flex-direction: column;
       gap: 10px;
     }
+    .skills p, .projects p, .contact p {
+      margin: 0;
+      padding: 10px;
+      background: #f0f0f0;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .project img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .project p {
+      margin: 10px 0;
+    }
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #007aff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .project a:hover {
+      background: #005bb5;
+    }
+    .contact a {
+      color: #007aff;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
     footer {
       background: #004a99;
       color: white;
@@ -70,9 +120,35 @@
     footer a:hover {
       text-decoration: underline;
     }
-    .social-links i {
-      margin: 0 5px;
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .social-links a {
+      color: #ff0a0a;
       font-size: 1.5em;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #007aff;
+    }
+    footer {
+      background: #004a99;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #007aff;
     }
   </style>
 </head>
@@ -108,26 +184,58 @@
   <section id="projects">
     <h2>Loyihalar</h2>
     <div class="projects">
-      <p><a href="https://biosteenyc.github.io/colortask/" target="_blank">ColorTask - Todo List App</a></p>
-      <p><a href="https://biosteenyc.github.io/WeatherApp/" target="_blank">Ob-Havo Ilovasi</a></p>
-      <p><a href="https://biosteenyc.github.io/valyuta_tarjimoni/" target="_blank">Valyuta Kurslari Tarjimon</a></p>
-      <p><a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.abdulhakim_sherlari" target="_blank">Abdulhakim Sherlari</a></p>
-    </div>
-  </section>
-  
-  <section id="contact">
-    <h2>Aloqa</h2>
-    <div class="contact">
-      <p>Telegram: <a href="https://t.me/Biosteenyc" target="_blank">@Biosteenyc</a></p>
-      <p>Email: biosteenyc@gmail.com</p>
-      <p>Telefon: +998 33 349 09 30</p>
-      <div class="social-links">
-        <a href="https://github.com/biosteenyc" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/abdulhakim-biosteenyc" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://youtube.com/@Biosteenyc" target="_blank"><i class="fab fa-youtube"></i></a>
+      <div class="project">
+        <p><strong>ColorTask - Todo List App</strong></p>
+        <img src="https://github.com/BIOSTEENYC/colortask/blob/main/icons/Icon-maskable-192.png?raw=true" alt="ColorTask - Todo List App">
+        <p>ColorTask - bu sizning kundalik vazifalaringizni boshqarish uchun ajoyib ilova.</p>
+        <a href="https://biosteenyc.github.io/colortask/" target="_blank">Sinab ko'rish</a>
+      </div>
+      <div class="project">
+        <p><strong>Ob-Havo Ilovasi</strong></p>
+        <img src="https://raw.githubusercontent.com/BIOSTEENYC/WeatherApp/refs/heads/main/icons/icon-maskable-192.png" alt="Ob-Havo Ilovasi">
+        <p>Ob-Havo Ilovasi - bu sizga eng so'nggi ob-havo ma'lumotlarini taqdim etadi.</p>
+        <a href="https://biosteenyc.github.io/WeatherApp/" target="_blank">Sinab ko'rish</a>
+      </div>
+      <div class="project">
+        <p><strong>Valyuta Kurslari Tarjimon</strong></p>
+        <img src="https://raw.githubusercontent.com/BIOSTEENYC/valyuta_tarjimoni/refs/heads/main/icons/icon-maskable-192.png" alt="Valyuta Kurslari Tarjimon">
+        <p>Valyuta Kurslari Tarjimon - bu valyuta kurslarini tez va oson tarjima qilish imkonini beradi.</p>
+        <a href="https://biosteenyc.github.io/valyuta_tarjimoni/" target="_blank">Sinab ko'rish</a>
+      </div>
+      <div class="project">
+        <p><strong>Expense Tracker</strong></p>
+        <img src="https://raw.githubusercontent.com/BIOSTEENYC/expensetracker/refs/heads/main/icons/icon-192.png" alt="Harajatlarni kuzatish ilovasi">
+        <p>Expense Tracker - bu sizning harajatlaringizni kuzatish va boshqarish uchun ajoyib ilova. Harajatlaringizni kategoriyalarga ajratib, ularni tahlil qilish imkonini beradi.</p>
+        <a href="https://biosteenyc.github.io/expensetracker/" target="_blank">Sinab ko'rish</a>
+      </div>
+      <div class="project">
+        <p><strong>Abdulhakim Sherlari</strong></p>
+        <img src="https://play-lh.googleusercontent.com/JKm_YxVpA2x6hV_pS4MNLMU3gN0EXF7wa_BAkVYqV-eLZuFdFgXX5LdK8L2EG-4I9Iw=w240-h480-rw" alt="Abdulhakim Sherlari">
+        <p>Abdulhakim Sherlari - bu Abdulhakimning eng yaxshi she'rlarini o'z ichiga olgan ilova.</p>
+        <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.abdulhakim_sherlari" target="_blank">Google Playdan o'rnatish</a>
+      </div>
+      <div class="project">  
+        <p><strong>Kompyuter sirlari</strong></p>
+        <img src="kompyutersirlari.webp" alt="Kompyuter sirlari">
+        <p>Kompyuter sirlari - bu Kompyuterdagi dasturiy va tajribaviy muammolariga yechim.</p>
+        <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari" target="_blank">Google Playdan o'rnatish</a>
       </div>
     </div>
-  </section>
+  </section></div>
+    
+    <section id="contact">
+      <h2>Aloqa</h2>
+      <div class="contact">
+        <p><i class="fab fa-telegram"></i>  Telegram: <a href="https://t.me/Biosteenyc" target="_blank">@Biosteenyc</a></p>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:xayitboyevabdulhakim@gmail.com">xayitboyevabdulhakim@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+998333490930">+998 33 349 09 30</a></p>
+        <div class="social-links">
+          <a href="https://github.com/biosteenyc" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/abdulhakim-biosteenyc" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://youtube.com/@Biosteenyc" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
   
   <footer>
     <p>&copy; 2025 al-Biosteenyc | <a href="https://biosteenyc.github.io/biosteenyc" target="_blank">Men va Loyihalarim</a></p>
