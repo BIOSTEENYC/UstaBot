@@ -1,198 +1,136 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulhakim Xayitboyev - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-            background-color: #0a0a0a;
-            color: #fff;
-        }
-        .container {
-            perspective: 1000px;
-        }
-        .portfolio-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            transform-style: preserve-3d;
-            animation: rotate 30s infinite linear;
-        }
-        @keyframes rotate {
-            from {
-                transform: rotateY(0deg);
-            }
-            to {
-                transform: rotateY(360deg);
-            }
-        }
-
-        /* 3D effect for sections */
-        .section {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            opacity: 0.8;
-            transition: all 1s ease;
-        }
-
-        .section:hover {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        /* 3D rotation effects */
-        #skills {
-            transform: rotateY(0deg) translateZ(500px);
-            background: #3498db;
-        }
-        #experience {
-            transform: rotateY(90deg) translateZ(500px);
-            background: #e74c3c;
-        }
-        #education {
-            transform: rotateY(180deg) translateZ(500px);
-            background: #2ecc71;
-        }
-        #projects {
-            transform: rotateY(270deg) translateZ(500px);
-            background: #f39c12;
-        }
-        #contact {
-            transform: rotateY(360deg) translateZ(500px);
-            background: #9b59b6;
-        }
-
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .bottom-navigation {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .bottom-navigation a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .bottom-navigation a:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        /* Responsiv */
-        @media (max-width: 768px) {
-            .section {
-                padding: 20px;
-                font-size: 1.5rem;
-            }
-            .bottom-navigation a {
-                font-size: 1rem;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flutter dasturchi portfoliasi - al-Biosteenyc.">
+  <title>al-Biosteenyc - Flutter Dasturchi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #007aff;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin: 10px 0 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #004a99;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .skills, .projects, .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    footer {
+      background: #004a99;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .social-links i {
+      margin: 0 5px;
+      font-size: 1.5em;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="portfolio-container">
-        <!-- Kasbiy Ko'nikmalar -->
-        <section id="skills" class="section">
-            <h2>Kasbiy Ko'nikmalar</h2>
-            <ul>
-                <li>Dart tilida dasturlash</li>
-                <li>Flutter bilan mobil ilovalarni ishlab chiqish</li>
-                <li>Firebase va REST API bilan ishlash</li>
-                <li>Git version control tizimidan foydalanish</li>
-            </ul>
-        </section>
-
-        <!-- Ish Tajribasi -->
-        <section id="experience" class="section">
-            <h2>Ish Tajribasi</h2>
-            <ul>
-                <li>
-                    <strong>Junior Flutter Developer - Frilans</strong><br>
-                    2022 - Hozirgi vaqtgacha<br>
-                    Flutter bilan turli xil mobil ilovalarni ishlab chiqish va yangilash.
-                </li>
-            </ul>
-        </section>
-
-        <!-- Ta'lim -->
-        <section id="education" class="section">
-            <h2>Ta'lim</h2>
-            <ul>
-                <li>
-                    <strong>Toshkent Amaliy Fanlar Universiteti</strong><br>
-                    Bakalavr darajasi, Kompyuter Injinerligi<br>
-                    2022 - 2026
-                </li>
-            </ul>
-        </section>
-
-        <!-- Loyihalar -->
-        <section id="projects" class="section">
-            <h2>Loyihalar</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Kompyuter sirlari</h3>
-                    <p>Kompyuterdagi tizim muammolarini hal etish</p>
-                    <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari&hl=uz" target="_blank">Play Marketdan yuklash</a>
-                </div>
-                <div class="card">
-                    <h3>Telefon Akademiyasi</h3>
-                    <p>Telefondan maksimal foyda olish</p>
-                    <a href="https://github.com/BIOSTEENYC/telefon_akademiyasi" target="_blank">Loyihani ko'rish</a>
-                </div>
-                <div class="card">
-                    <h3>Abdulhakim She'rlari</h3>
-                    <p>She'rlar va zamonaviy mavzular</p>
-                    <a href="https://github.com/BIOSTEENYC/abdulhakim_sherlari" target="_blank">Loyihani ko'rish</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kontakt -->
-        <section id="contact" class="section">
-            <h2>Kontakt</h2>
-            <p>Agar biz bilan bog'lanmoqchi bo'lsangiz, yuqoridagi aloqa ma'lumotlaridan foydalaning.</p>
-        </section>
+  <header>
+    <h1>al-Biosteenyc</h1>
+    <p>Flutter Dasturchi | Zamonaviy UI/UX Dizayner</p>
+  </header>
+  
+  <nav>
+    <a href="#about">Haqimda</a>
+    <a href="#skills">Ko'nikmalar</a>
+    <a href="#projects">Loyihalar</a>
+    <a href="#contact">Aloqa</a>
+  </nav>
+  
+  <section id="about">
+    <h2>Haqimda</h2>
+    <p>Salom! Men Abdulhakim Xayitboyev, Flutter asosida mobil va veb ilovalar yaratishda ixtisoslashgan dasturchiman. Responsive va zamonaviy dizayn yaratishni yaxshi ko'raman.</p>
+  </section>
+  
+  <section id="skills">
+    <h2>Ko'nikmalar</h2>
+    <div class="skills">
+      <p>- Holat boshqaruvi: Provider, Bloc, Riverpod</p>
+      <p>- RestAPI: dio, http</p>
+      <p>- Local Ma'lumot Bazasi: Hive, Shared Preferences</p>
+      <p>- Firebase Integratsiyasi</p>
+      <p>- Responsive va Adaptive UI/UX</p>
     </div>
-</div>
-
-<!-- Navigatsiya -->
-<div class="bottom-navigation">
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</div>
-
+  </section>
+  
+  <section id="projects">
+    <h2>Loyihalar</h2>
+    <div class="projects">
+      <p><a href="https://biosteenyc.github.io/colortask/" target="_blank">ColorTask - Todo List App</a></p>
+      <p><a href="https://biosteenyc.github.io/WeatherApp/" target="_blank">Ob-Havo Ilovasi</a></p>
+      <p><a href="https://biosteenyc.github.io/valyuta_tarjimoni/" target="_blank">Valyuta Kurslari Tarjimon</a></p>
+      <p><a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.abdulhakim_sherlari" target="_blank">Abdulhakim Sherlari</a></p>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <h2>Aloqa</h2>
+    <div class="contact">
+      <p>Telegram: <a href="https://t.me/Biosteenyc" target="_blank">@Biosteenyc</a></p>
+      <p>Email: biosteenyc@gmail.com</p>
+      <p>Telefon: +998 33 349 09 30</p>
+      <div class="social-links">
+        <a href="https://github.com/biosteenyc" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/abdulhakim-biosteenyc" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://youtube.com/@Biosteenyc" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 al-Biosteenyc | <a href="https://biosteenyc.github.io/biosteenyc" target="_blank">Men va Loyihalarim</a></p>
+  </footer>
 </body>
-</html>
+                                       </html>
