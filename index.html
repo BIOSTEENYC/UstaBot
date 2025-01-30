@@ -8,37 +8,46 @@
     <title>Xayitboyev Abdulhakim | Biosteenyc - Flutter Dasturchi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #6200ea;
+            --secondary-color: #03dac6;
+            --background-color: #ffffff;
+            --surface-color: #f5f5f5;
+            --error-color: #b00020;
+            --on-primary-color: #ffffff;
+            --on-secondary-color: #000000;
+            --on-background-color: #000000;
+            --on-surface-color: #000000;
+            --on-error-color: #ffffff;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #0D0D0D, #434343);
-            color: #E0E0E0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--on-background-color);
             overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(90deg, rgba(0, 122, 255, 0.8), rgba(0, 74, 153, 0.8));
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
             padding: 20px 10px;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header img.banner {
             width: 100%;
             height: 300px;
             object-fit: cover;
-            border-bottom: 5px solid rgba(0, 74, 153, 0.8);
-            filter: blur(2px);
+            border-bottom: 5px solid var(--primary-color);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            animation: glow 1.5s ease-in-out infinite alternate;
         }
 
         header p {
@@ -49,32 +58,29 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            background: linear-gradient(90deg, rgba(0, 74, 153, 0.8), rgba(0, 122, 255, 0.8), rgba(0, 198, 255, 0.8));
+            background-color: var(--secondary-color);
             padding: 10px 0;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transform: perspective(1000px) rotateX(10deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            color: white;
+            color: var(--on-secondary-color);
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #FFD700;
-            text-shadow: 0 0 10px #FFD700;
+            color: var(--on-primary-color);
         }
 
         section {
             padding: 20px;
             margin: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background-color: var(--surface-color);
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         #about img.profile {
@@ -84,7 +90,7 @@
             object-fit: cover;
             display: block;
             margin: 0 auto 20px;
-            border: 5px solid rgba(0, 74, 153, 0.8);
+            border: 5px solid var(--secondary-color);
             transition: transform 0.3s;
         }
 
@@ -105,9 +111,9 @@
         .contact p {
             margin: 0;
             padding: 10px;
-            background: rgba(240, 240, 240, 0.1);
+            background-color: var(--surface-color);
             border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, background 0.3s;
         }
 
@@ -115,7 +121,8 @@
         .projects p:hover,
         .contact p:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.2);
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
         }
 
         .projects {
@@ -125,9 +132,9 @@
         }
 
         .project {
-            background: rgba(255, 255, 255, 0.1);
+            background-color: var(--surface-color);
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
             transition: transform 0.3s, background 0.3s;
@@ -153,56 +160,46 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 15px;
-            background: #007aff;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s, transform 0.3s;
         }
 
         .project a:hover {
-            background: #005bb5;
+            background-color: var(--secondary-color);
             transform: translateY(-5px);
         }
 
         .contact a {
-            color: #007aff;
+            color: var(--primary-color);
             text-decoration: none;
         }
 
         .contact a:hover {
-            color: #FFD700;
-            text-shadow: 0 0 10px #FFD700;
+            color: var(--secondary-color);
         }
 
         footer {
-            background: rgba(0, 74, 153, 0.8);
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
             text-align: center;
             padding: 20px 10px;
             position: relative;
             bottom: 0;
             width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         footer a {
-            color: #ffffff;
+            color: var(--on-primary-color);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         footer a:hover {
-            color: #FFD700;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #007aff, 0 0 15px #007aff, 0 0 20px #007aff, 0 0 25px #007aff;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #007aff, 0 0 30px #007aff, 0 0 40px #007aff, 0 0 50px #007aff;
-            }
+            color: var(--secondary-color);
         }
     </style>
 </head>
