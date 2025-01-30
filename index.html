@@ -11,8 +11,8 @@
         :root {
             --primary-color: #6200ea;
             --secondary-color: #03dac6;
-            --background-color: #ffffff;
-            --surface-color: #f5f5f5;
+            --background-color: rgba(255, 255, 255, 0.8); /* Adjusted for transparency */
+            --surface-color: rgba(245, 245, 245, 0.8); /* Adjusted for transparency */
             --error-color: #b00020;
             --on-primary-color: #ffffff;
             --on-secondary-color: #000000;
@@ -24,9 +24,20 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: var(--background-color);
+            background-image: url('https://github.com/BIOSTEENYC/BIOSTEENYC.github.io/blob/gh-pages/background_image.jpg?raw=true'); /* Add your background image URL */
+            background-size: cover;
+            background-attachment: fixed;
             color: var(--on-background-color);
             overflow-x: hidden;
+        }
+
+        main {
+            background-color: var(--background-color);
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
         }
 
         header {
@@ -218,80 +229,82 @@
         <a href="#contact">Aloqa</a>
     </nav>
 
-    <section id="about">
-        <img class="profile" src="https://avatars.githubusercontent.com/u/131641285?v=4" alt="Profil Rasm">
-        <h2>Haqimda</h2>
-        <p>Salom! Men Abdulhakim Xayitboyev, Flutter asosida mobil va veb ilovalar yaratishda ixtisoslashgan dasturchiman. Responsive va zamonaviy dizayn yaratishni yaxshi ko'raman.</p>
-        <p><strong>Toshkent Amaliy Fanlar Universiteti</strong><br> Kompyuter injiniringgi fakulteti<br> 3 - kurs talabasi</p>
-        <p>Farg'ona viloyati Qo'shtepa tumanida yolg'iz kod yozayotgan yosh dasturchi.</p>
-    </section>
+    <main>
+        <section id="about">
+            <img class="profile" src="https://avatars.githubusercontent.com/u/131641285?v=4" alt="Profil Rasm">
+            <h2>Haqimda</h2>
+            <p>Salom! Men Abdulhakim Xayitboyev, Flutter asosida mobil va veb ilovalar yaratishda ixtisoslashgan dasturchiman. Responsive va zamonaviy dizayn yaratishni yaxshi ko'raman.</p>
+            <p><strong>Toshkent Amaliy Fanlar Universiteti</strong><br> Kompyuter injiniringgi fakulteti<br> 3 - kurs talabasi</p>
+            <p>Farg'ona viloyati Qo'shtepa tumanida yolg'iz kod yozayotgan yosh dasturchi.</p>
+        </section>
 
-    <section id="skills">
-        <h2>Ko'nikmalar</h2>
-        <div class="skills">
-            <p>- Holat boshqaruvi: Provider, Bloc, Riverpod</p>
-            <p>- RestAPI: dio, http</p>
-            <p>- Local Ma'lumot Bazasi: Hive, Shared Preferences</p>
-            <p>- Firebase Integratsiyasi</p>
-            <p>- Responsive va Adaptive UI/UX</p>
-        </div>
-    </section>
+        <section id="skills">
+            <h2>Ko'nikmalar</h2>
+            <div class="skills">
+                <p>- Holat boshqaruvi: Provider, Bloc, Riverpod</p>
+                <p>- RestAPI: dio, http</p>
+                <p>- Local Ma'lumot Bazasi: Hive, Shared Preferences</p>
+                <p>- Firebase Integratsiyasi</p>
+                <p>- Responsive va Adaptive UI/UX</p>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Loyihalar</h2>
-        <div class="projects">
-            <div class="project">
-                <p><strong>ColorTask - Todo List App</strong></p>
-                <img src="https://github.com/BIOSTEENYC/colortask/blob/main/icons/Icon-maskable-192.png?raw=true" alt="ColorTask - Todo List App">
-                <p>ColorTask - bu sizning kundalik vazifalaringizni boshqarish uchun ajoyib ilova.</p>
-                <a href="https://biosteenyc.github.io/colortask/" target="_blank">Sinab ko'rish</a>
+        <section id="projects">
+            <h2>Loyihalar</h2>
+            <div class="projects">
+                <div class="project">
+                    <p><strong>ColorTask - Todo List App</strong></p>
+                    <img src="https://github.com/BIOSTEENYC/colortask/blob/main/icons/Icon-maskable-192.png?raw=true" alt="ColorTask - Todo List App">
+                    <p>ColorTask - bu sizning kundalik vazifalaringizni boshqarish uchun ajoyib ilova.</p>
+                    <a href="https://biosteenyc.github.io/colortask/" target="_blank">Sinab ko'rish</a>
+                </div>
+                <div class="project">
+                    <p><strong>Ob-Havo Ilovasi</strong></p>
+                    <img src="https://raw.githubusercontent.com/BIOSTEENYC/WeatherApp/refs/heads/main/icons/icon-maskable-192.png" alt="Ob-Havo Ilovasi">
+                    <p>Ob-Havo Ilovasi - bu sizga eng so'nggi ob-havo ma'lumotlarini taqdim etadi.</p>
+                    <a href="https://biosteenyc.github.io/WeatherApp/" target="_blank">Sinab ko'rish</a>
+                </div>
+                <div class="project">
+                    <p><strong>Valyuta Kurslari Tarjimon</strong></p>
+                    <img src="https://raw.githubusercontent.com/BIOSTEENYC/valyuta_tarjimoni/refs/heads/main/icons/icon-maskable-192.png" alt="Valyuta Kurslari Tarjimon">
+                    <p>Valyuta Kurslari Tarjimon - bu valyuta kurslarini tez va oson tarjima qilish imkonini beradi.</p>
+                    <a href="https://biosteenyc.github.io/valyuta_tarjimoni/" target="_blank">Sinab ko'rish</a>
+                </div>
+                <div class="project">
+                    <p><strong>Expense Tracker</strong></p>
+                    <img src="https://raw.githubusercontent.com/BIOSTEENYC/expensetracker/refs/heads/main/icons/icon-192.png" alt="Harajatlarni kuzatish ilovasi">
+                    <p>Expense Tracker - bu sizning harajatlaringizni kuzatish va boshqarish uchun ajoyib ilova. Harajatlaringizni kategoriyalarga ajratib, ularni tahlil qilish imkonini beradi.</p>
+                    <a href="https://biosteenyc.github.io/expensetracker/" target="_blank">Sinab ko'rish</a>
+                </div>
+                <div class="project">
+                    <p><strong>Abdulhakim Sherlari</strong></p>
+                    <img src="https://play-lh.googleusercontent.com/JKm_YxVpA2x6hV_pS4MNLMU3gN0EXF7wa_BAkVYqV-eLZuFdFgXX5LdK8L2EG-4I9Iw=w240-h480-rw" alt="Abdulhakim Sherlari">
+                    <p>Abdulhakim Sherlari - bu Abdulhakimning eng yaxshi she'rlarini o'z ichiga olgan ilova.</p>
+                    <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.abdulhakim_sherlari" target="_blank">Google Playdan o'rnatish</a>
+                </div>
+                <div class="project">
+                    <p><strong>Kompyuter sirlari</strong></p>
+                    <img src="https://play-lh.googleusercontent.com/wWZOrmAUZ3aFRySXG5Il-5vljui7fsR2-oJNrMD9VQhYRXIrP0aZ8Kdmxj4m4CFzxQ=w240-h480-rw" alt="Kompyuter sirlari">
+                    <p>Kompyuter sirlari - bu Kompyuterdagi dasturiy va tajribaviy muammolariga yechim.</p>
+                    <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari" target="_blank">Google Playdan o'rnatish</a>
+                </div>
             </div>
-            <div class="project">
-                <p><strong>Ob-Havo Ilovasi</strong></p>
-                <img src="https://raw.githubusercontent.com/BIOSTEENYC/WeatherApp/refs/heads/main/icons/icon-maskable-192.png" alt="Ob-Havo Ilovasi">
-                <p>Ob-Havo Ilovasi - bu sizga eng so'nggi ob-havo ma'lumotlarini taqdim etadi.</p>
-                <a href="https://biosteenyc.github.io/WeatherApp/" target="_blank">Sinab ko'rish</a>
-            </div>
-            <div class="project">
-                <p><strong>Valyuta Kurslari Tarjimon</strong></p>
-                <img src="https://raw.githubusercontent.com/BIOSTEENYC/valyuta_tarjimoni/refs/heads/main/icons/icon-maskable-192.png" alt="Valyuta Kurslari Tarjimon">
-                <p>Valyuta Kurslari Tarjimon - bu valyuta kurslarini tez va oson tarjima qilish imkonini beradi.</p>
-                <a href="https://biosteenyc.github.io/valyuta_tarjimoni/" target="_blank">Sinab ko'rish</a>
-            </div>
-            <div class="project">
-                <p><strong>Expense Tracker</strong></p>
-                <img src="https://raw.githubusercontent.com/BIOSTEENYC/expensetracker/refs/heads/main/icons/icon-192.png" alt="Harajatlarni kuzatish ilovasi">
-                <p>Expense Tracker - bu sizning harajatlaringizni kuzatish va boshqarish uchun ajoyib ilova. Harajatlaringizni kategoriyalarga ajratib, ularni tahlil qilish imkonini beradi.</p>
-                <a href="https://biosteenyc.github.io/expensetracker/" target="_blank">Sinab ko'rish</a>
-            </div>
-            <div class="project">
-                <p><strong>Abdulhakim Sherlari</strong></p>
-                <img src="https://play-lh.googleusercontent.com/JKm_YxVpA2x6hV_pS4MNLMU3gN0EXF7wa_BAkVYqV-eLZuFdFgXX5LdK8L2EG-4I9Iw=w240-h480-rw" alt="Abdulhakim Sherlari">
-                <p>Abdulhakim Sherlari - bu Abdulhakimning eng yaxshi she'rlarini o'z ichiga olgan ilova.</p>
-                <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.abdulhakim_sherlari" target="_blank">Google Playdan o'rnatish</a>
-            </div>
-            <div class="project">
-                <p><strong>Kompyuter sirlari</strong></p>
-                <img src="https://play-lh.googleusercontent.com/wWZOrmAUZ3aFRySXG5Il-5vljui7fsR2-oJNrMD9VQhYRXIrP0aZ8Kdmxj4m4CFzxQ=w240-h480-rw" alt="Kompyuter sirlari">
-                <p>Kompyuter sirlari - bu Kompyuterdagi dasturiy va tajribaviy muammolariga yechim.</p>
-                <a href="https://play.google.com/store/apps/details?id=uz.biosteenyc.kompyuter.kompyuter_sirlari" target="_blank">Google Playdan o'rnatish</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h2>Aloqa</h2>
-        <div class="contact">
-            <p><i class="fab fa-telegram"></i> Telegram: <a href="https://t.me/Biosteenyc" target="_blank">@Biosteenyc</a></p>
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:xayitboyevabdulhakim@gmail.com">xayitboyevabdulhakim@gmail.com</a></p>
-            <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+998333490930">+998 33 349 09 30</a></p>
-            <div class="social-links">
-                <a href="https://github.com/biosteenyc" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/abdulhakim-biosteenyc" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://youtube.com/@Biosteenyc" target="_blank"><i class="fab fa-youtube"></i></a>
+        <section id="contact">
+            <h2>Aloqa</h2>
+            <div class="contact">
+                <p><i class="fab fa-telegram"></i> Telegram: <a href="https://t.me/Biosteenyc" target="_blank">@Biosteenyc</a></p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:xayitboyevabdulhakim@gmail.com">xayitboyevabdulhakim@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+998333490930">+998 33 349 09 30</a></p>
+                <div class="social-links">
+                    <a href="https://github.com/biosteenyc" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/abdulhakim-biosteenyc" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://youtube.com/@Biosteenyc" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Abdulhakim al - Biosteenyc | <a href="https://biosteenyc.github.io/biosteenyc" target="_blank">Men va Loyihalarim</a></p>
